@@ -1,6 +1,8 @@
 import pandas as pd
 import glob
 
+from tensorflow.python.ops.metrics_impl import false_negatives
+
 data_dir = './crawling_data/news_title_data'
 data_path = glob.glob(data_dir + '*.*')
 print(data_path)
@@ -10,4 +12,4 @@ for path in data_path:
     df = pd.concat([df, df_section], ignore_index=True)
 df.info()
 print(df.head())
-df.to_csv('./crawling_data/news_titles.csv')
+df.to_csv('./crawling_data/news_titles.csv', index = False)

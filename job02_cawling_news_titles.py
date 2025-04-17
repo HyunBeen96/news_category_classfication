@@ -44,6 +44,7 @@ for outer_i in range(0,2):  # 준택님 2,4     민정님 4,6
         time.sleep(0.5)
         try:
             driver.find_element(By.XPATH, button_xpath).click()
+            print(i)
         except:
             break
 
